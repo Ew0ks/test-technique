@@ -1,8 +1,11 @@
+// == Import component
+import Navbar from "../Navbar";
+
 const App = () => {
   return (
     <div>
       <header>
-        TODO
+        <Navbar />
       </header>
     </div>
   );
