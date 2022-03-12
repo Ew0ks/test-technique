@@ -10,17 +10,17 @@ import Map from "../Map";
 const App = () => {
 
     return (
-    <div>
-        <header>
-            <Navbar />
-        </header>
-        <main>
-            <Switch>
-                <Route path="/" element={<Home />} />
-                <Route path="/map" element={<Map />} />
-            </Switch>
-        </main>
-    </div>
+        <div>
+            <header>
+                <Navbar />
+            </header>
+            <main>
+                <Switch>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/map" element={<Map />} />
+                </Switch>
+            </main>
+        </div>
     );
 }
 
