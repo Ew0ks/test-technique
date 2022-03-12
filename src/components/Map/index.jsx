@@ -1,5 +1,5 @@
 // == Import npm
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import mapLibreGl from "maplibre-gl";
 
 // == Import style
