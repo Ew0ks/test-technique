@@ -9,7 +9,7 @@ import "./Map.scss";
 const Map = () => {
     const mapContainer = useRef(null);
     const [API_KEY] = useState("4qgA42jnxrnWDigecejN");
-    const [viewport] = useState({
+    const [mapViewport] = useState({
         latitude: 46.8,
         longitude: 2.2,
         zoom: 5.5
@@ -20,8 +20,8 @@ const Map = () => {
         new maplibregl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
-            center: [viewport.longitude, viewport.latitude],
-            zoom: viewport.zoom
+            center: [mapViewport.longitude, mapViewport.latitude],
+            zoom: mapViewport.zoom
         });
 
     }, []);
