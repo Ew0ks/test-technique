@@ -1,8 +1,10 @@
+// == Import npm
 import { NavLink } from "react-router-dom";
 
-// == CSS
+// == Import style
 import "./Navbar.scss";
 
+// == component
 const Navbar = () => (
     <nav className="navbar">
         <NavLink
@@ -22,4 +24,5 @@ const Navbar = () => (
     </nav>
 );
 
+// == Export component
 export default Navbar;

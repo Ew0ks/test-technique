@@ -1,11 +1,12 @@
 // == Import npm
 import { Routes, Route } from 'react-router-dom';
 
-// == Import component
+// == Import components
 import Navbar from "../Navbar";
 import Home from "../Home";
 import Map from "../Map";
 
+// == Component
 const App = () => {
     return (
     <div>
@@ -22,4 +23,5 @@ const App = () => {
     );
 }
 
+// == Export component
 export default App;
