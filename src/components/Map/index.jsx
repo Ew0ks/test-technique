@@ -1,5 +1,5 @@
 // == Import npm
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import mapLibreGl from "maplibre-gl";
 
 // == Import style
@@ -7,28 +7,19 @@ import "./Map.scss";
 
 // == Component
 const Map = () => {
-    const mapContainer = useRef(null);
-    const [API_KEY] = useState("4qgA42jnxrnWDigecejN");
-    const [mapViewport] = useState({
-        latitude: 46.8,
-        longitude: 2.2,
-        zoom: 5.5
-    });
 
     useEffect(() => {
-
         new mapLibreGl.Map({
-            container: mapContainer.current,
-            style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
-            center: [mapViewport.longitude, mapViewport.latitude],
-            zoom: mapViewport.zoom
+            container: "test",
+            style: "https://api.maptiler.com/maps/streets/style.json?key=4qgA42jnxrnWDigecejN",
+            center: [2.2, 46.8],
+            zoom: 5.5
         });
-
-    }, [mapViewport, API_KEY]);
+    }, [])
 
     return (
         <div className="map-contained">
-            <div ref={mapContainer} className="map" />
+            <div id="test" className="map" />
         </div>
     );
 };

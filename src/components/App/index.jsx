@@ -1,5 +1,5 @@
 // == Import npm
-import { Routes, Route } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
 
 // == Import components
 import Navbar from "../Navbar";
@@ -8,16 +8,17 @@ import Map from "../Map";
 
 // == Component
 const App = () => {
+
     return (
     <div>
         <header>
             <Navbar />
         </header>
         <main>
-            <Routes>
+            <Switch>
                 <Route path="/" element={<Home />} />
                 <Route path="/map" element={<Map />} />
-            </Routes>
+            </Switch>
         </main>
     </div>
     );
