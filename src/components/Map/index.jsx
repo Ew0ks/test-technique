@@ -10,7 +10,6 @@ const Map = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [API_KEY] = useState("4qgA42jnxrnWDigecejN");
-    const [url, setUrl] = useState("");
     const [viewport] = useState({
         latitude: 46.8,
         longitude: 2.2,
