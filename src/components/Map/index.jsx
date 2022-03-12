@@ -1,6 +1,6 @@
 // == Import npm
-import { useEffect, useRef, useState } from "react";
-import maplibregl from "maplibre-gl";
+import {useEffect, useRef, useState} from "react";
+import mapLibreGl from "maplibre-gl";
 
 // == Import style
 import "./Map.scss";
@@ -17,14 +17,14 @@ const Map = () => {
 
     useEffect(() => {
 
-        new maplibregl.Map({
+        new mapLibreGl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
             center: [mapViewport.longitude, mapViewport.latitude],
             zoom: mapViewport.zoom
         });
 
-    }, []);
+    }, [mapViewport, API_KEY]);
 
     return (
         <div className="map-contained">
