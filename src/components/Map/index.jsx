@@ -8,9 +8,9 @@ import "./Map.scss";
 const Map = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [longitude, setLongitude] = useState(4.835659);
-    const [latitude, setLatitude] = useState(45.764043);
-    const [zoom, setZoom] = useState(14);
+    const [longitude] = useState(2.2);
+    const [latitude] = useState(46.8);
+    const [zoom] = useState(5.5);
     const [API_KEY] = useState("4qgA42jnxrnWDigecejN");
 
     useEffect(() => {
