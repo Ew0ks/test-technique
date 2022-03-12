@@ -8,9 +8,11 @@ import "./Map.scss";
 const Map = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [longitude] = useState(2.2);
-    const [latitude] = useState(46.8);
-    const [zoom] = useState(5.5);
+    const [viewport] = useState({
+        latitude: 46.8,
+        longitude: 2.2,
+        zoom: 5.5
+    });
     const [API_KEY] = useState("4qgA42jnxrnWDigecejN");
 
     useEffect(() => {
@@ -18,8 +20,8 @@ const Map = () => {
         map.current = new maplibregl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
-            center: [longitude, latitude],
-            zoom: zoom
+            center: [viewport.longitude, viewport.latitude],
+            zoom: viewport.zoom
         });
     });
 
