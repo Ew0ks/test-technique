@@ -8,7 +8,6 @@ import "./Navbar.scss";
 const Navbar = () => (
     <nav className="navbar">
         <NavLink
-            exact="true"
             to="/"
             className="navbar-link"
         >
