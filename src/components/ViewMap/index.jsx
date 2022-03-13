@@ -10,7 +10,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import "./Map.scss";
 
 // == Component
-const Map = () => {
+const ViewMap = () => {
     const [apiKey] = useState("4qgA42jnxrnWDigecejN");
     const [viewState, setViewState] = useState({
         longitude: 2.2,
@@ -32,4 +32,4 @@ const Map = () => {
 };
 
 // == Export component
-export default Map;
+export default ViewMap;

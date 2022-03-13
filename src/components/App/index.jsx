@@ -4,7 +4,7 @@ import { Routes as Switch, Route } from 'react-router-dom';
 // == Import components
 import Navbar from "../Navbar";
 import Home from "../Home";
-import Map from "../Map";
+import ViewMap from "../ViewMap";
 
 // == Component
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route path="/" element={<Home />} />
-                    <Route path="/map" element={<Map />} />
+                    <Route path="/map" element={<ViewMap />} />
                 </Switch>
             </main>
         </div>
