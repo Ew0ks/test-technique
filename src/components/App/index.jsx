@@ -1,5 +1,7 @@
 // == Import npm
+import { useState } from "react";
 import { Routes as Switch, Route } from 'react-router-dom';
+import mapLibreGl from "maplibre-gl";
 
 // == Import components
 import Navbar from "../Navbar";
@@ -8,6 +10,10 @@ import ViewMap from "../ViewMap";
 
 // == Component
 const App = () => {
+    const [API_KEY] = useState('4qgA42jnxrnWDigecejN');
+
+    mapLibreGl.prewarm();
+    mapLibreGl.workerUrl = `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`;
 
     return (
         <div>

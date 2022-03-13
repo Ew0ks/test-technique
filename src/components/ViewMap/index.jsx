@@ -9,15 +9,11 @@ import "./ViewMap.scss";
 const ViewMap = () => {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [API_KEY] = useState('4qgA42jnxrnWDigecejN');
     const [viewState] = useState({
         longitude: 2.2,
         latitude: 46.8,
         zoom: 5
     });
-
-    mapLibreGl.prewarm();
-    mapLibreGl.workerUrl = `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`;
 
     useEffect(() => {
 
