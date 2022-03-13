@@ -11,7 +11,7 @@ import "./Map.scss";
 
 // == Component
 const ViewMap = () => {
-    const [viewState, setViewState] = useState({
+    const [viewState] = useState({
         longitude: 2.2,
         latitude: 46.8,
         zoom: 5.5
@@ -21,8 +21,7 @@ const ViewMap = () => {
         <div className="map-wrap">
             <ReactGl
                 reuseMaps={true} // Stores the board to avoid being destroyed when disassembling the component
-                {...viewState}
-                onMove={event => setViewState(event.viewState)}
+                initialViewState={{...viewState}}
                 mapLib={mapLibreGl}
                 mapStyle={"https://demotiles.maplibre.org/style.json"}
             />
