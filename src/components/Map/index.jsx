@@ -21,7 +21,7 @@ const Map = () => {
     return (
         <div className="map-wrap">
             <ReactGl
-                reuseMaps={true}
+                reuseMaps={true} // Stores the board to avoid being destroyed when disassembling the component
                 {...viewState}
                 onMove={event => setViewState(event.viewState)}
                 mapLib={mapLibreGl}
