@@ -1,5 +1,5 @@
 // == Import npm
-import { Routes as Switch, Route, useLocation } from 'react-router-dom';
+import { Routes as Switch, Route } from 'react-router-dom';
 
 // == Import components
 import Navbar from "../Navbar";
@@ -17,8 +17,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route path="/" element={<Home />} />
-                    <Route path="/map" element={<Map />}
-                    />
+                    <Route path="/map" element={<Map />} />
                 </Switch>
             </main>
         </div>
