@@ -3,6 +3,9 @@ import { useState } from "react";
 import ReactGl from "react-map-gl";
 import mapLibreGl from "maplibre-gl";
 
+// == Import style mapLibre-gl
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 // == Import style
 import "./Map.scss";
 
