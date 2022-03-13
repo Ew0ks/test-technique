@@ -1,6 +1,6 @@
 // == Import npm
 import { useState } from "react";
-import ReactGl, { NavigationControl } from "react-map-gl";
+import ReactGl from "react-map-gl";
 import mapLibreGl from "maplibre-gl";
 
 // == Import style mapLibre-gl
@@ -12,7 +12,7 @@ import "./Map.scss";
 // == Component
 const Map = () => {
     const [apiKey] = useState("4qgA42jnxrnWDigecejN");
-    const [mapViewport] = useState({
+    const [viewState, setViewState] = useState({
         longitude: 2.2,
         latitude: 46.8,
         zoom: 5.5
@@ -22,16 +22,11 @@ const Map = () => {
         <div className="map-wrap">
             <ReactGl
                 reuseMaps={true}
-                initialViewState={{
-                    longitude: mapViewport.longitude,
-                    latitude: mapViewport.latitude,
-                    zoom: mapViewport.zoom
-                }}
+                {...viewState}
+                onMove={event => setViewState(event.viewState)}
                 mapLib={mapLibreGl}
                 mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${apiKey}`}
-            >
-                <NavigationControl position="top-right" />
-            </ReactGl>
+            />
         </div>
     );
 };
