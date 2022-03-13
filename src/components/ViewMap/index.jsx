@@ -34,7 +34,7 @@ const ViewMap = () => {
             style: mapLibreGl.workerUrl,
             center: [viewState.longitude, viewState.latitude],
             zoom: viewState.zoom
-        });
+        }).addControl(new mapLibreGl.NavigationControl(undefined), 'top-right');
     });
 
     return (
