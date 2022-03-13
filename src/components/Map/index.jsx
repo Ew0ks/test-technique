@@ -1,6 +1,6 @@
 // == Import npm
 import { useState } from "react";
-import ReactGl from "react-map-gl";
+import ReactGl, { NavigationControl } from "react-map-gl";
 import mapLibreGl from "maplibre-gl";
 
 // == Import style mapLibre-gl
@@ -29,7 +29,9 @@ const Map = () => {
                 }}
                 mapLib={mapLibreGl}
                 mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${apiKey}`}
-            />
+            >
+                <NavigationControl position="top-right" />
+            </ReactGl>
         </div>
     );
 };
