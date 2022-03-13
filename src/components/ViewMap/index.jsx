@@ -14,7 +14,7 @@ const ViewMap = () => {
     const [viewState] = useState({
         longitude: 2.2,
         latitude: 46.8,
-        zoom: 5.5
+        zoom: 5
     });
 
     return (
