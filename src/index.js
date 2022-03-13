@@ -5,6 +5,9 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import './styles/index.css';
 
+// == Import style mapLibre-gl
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 ReactDOM.render(
   <React.StrictMode>
       <Router>
