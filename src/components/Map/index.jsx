@@ -19,7 +19,7 @@ const Map = () => {
     });
 
     return (
-        <div className="map-enclose">
+        <div className="map-wrap">
             <ReactGl
                 reuseMaps={true}
                 initialViewState={{
