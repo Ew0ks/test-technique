@@ -6,6 +6,9 @@ import Navbar from "../Navbar";
 import Home from "../Home";
 import ViewMap from "../ViewMap";
 
+// == Import style mapLibre-gl
+import 'maplibre-gl/dist/maplibre-gl.css';
+
 // == Component
 const App = () => {
 
