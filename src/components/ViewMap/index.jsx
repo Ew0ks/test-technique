@@ -11,7 +11,6 @@ import "./Map.scss";
 
 // == Component
 const ViewMap = () => {
-    const [apiKey] = useState("4qgA42jnxrnWDigecejN");
     const [viewState, setViewState] = useState({
         longitude: 2.2,
         latitude: 46.8,
@@ -25,7 +24,7 @@ const ViewMap = () => {
                 {...viewState}
                 onMove={event => setViewState(event.viewState)}
                 mapLib={mapLibreGl}
-                mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${apiKey}`}
+                mapStyle={"https://demotiles.maplibre.org/style.json"}
             />
         </div>
     );
