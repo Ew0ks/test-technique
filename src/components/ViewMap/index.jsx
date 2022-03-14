@@ -18,7 +18,6 @@ const ViewMap = ({ map }) => {
     mapLibreGl.prewarm();
 
     const alreadyMap = (alreadyMap) => {
-        console.log(alreadyMap);
         const element = document.getElementById("map-wrap");
         element.prepend(alreadyMap);
     };
