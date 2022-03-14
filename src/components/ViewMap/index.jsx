@@ -16,7 +16,7 @@ const ViewMap = ({ mapRef }) => {
         zoom: 5
     });
 
-    const addMapInTheDom = (map) => {
+    const addMapRefInDOM = (map) => {
         const element = document.getElementById("map-wrap");
         element.prepend(map);
     };
@@ -28,7 +28,7 @@ const ViewMap = ({ mapRef }) => {
         }
 
         if (mapRef.current) {
-            addMapInTheDom(mapRef.current);
+            addMapRefInDOM(mapRef.current);
             return;
         }
 
