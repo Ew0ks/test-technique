@@ -9,7 +9,7 @@ import ViewMap from "../ViewMap";
 
 // == Component
 const App = () => {
-    const map = useRef(null);
+    const mapRef = useRef(null);
 
     return (
         <div>
@@ -19,7 +19,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route path="/" element={<Home />} />
-                    <Route path="/map" element={<ViewMap map={map} />} />
+                    <Route path="/map" element={<ViewMap map={mapRef} />} />
                 </Switch>
             </main>
         </div>

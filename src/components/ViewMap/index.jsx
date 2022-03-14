@@ -7,7 +7,7 @@ import mapLibreGl from "!maplibre-gl";
 import "./ViewMap.scss";
 
 // == Component
-const ViewMap = ({ map }) => {
+const ViewMap = ({ mapRef }) => {
     const [API_KEY] = useState('4qgA42jnxrnWDigecejN');
     const mapContainer = useRef(null);
     const [viewState] = useState({
@@ -16,9 +16,9 @@ const ViewMap = ({ map }) => {
         zoom: 5
     });
 
-    const alreadyMap = (alreadyMap) => {
+    const addMapInTheDom = (map) => {
         const element = document.getElementById("map-wrap");
-        element.prepend(alreadyMap);
+        element.prepend(map);
     };
 
     useEffect(() => {
@@ -27,12 +27,12 @@ const ViewMap = ({ map }) => {
             alert('Your browser does not support MapLibre GL');
         }
 
-        if (map.current) {
-            alreadyMap(map.current);
+        if (mapRef.current) {
+            addMapInTheDom(mapRef.current);
             return;
         }
 
-        map.current = new mapLibreGl.Map({
+        mapRef.current = new mapLibreGl.Map({
             container: mapContainer.current,
             style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
             center: [viewState.longitude, viewState.latitude],
@@ -42,7 +42,7 @@ const ViewMap = ({ map }) => {
 
     return (
         <div className="map-wrap" id="map-wrap">
-            {!map.current && <div ref={mapContainer} className="map" />}
+            {!mapRef.current && <div ref={mapContainer} className="map" />}
         </div>
     );
 };
