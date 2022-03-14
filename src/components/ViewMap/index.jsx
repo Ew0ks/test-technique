@@ -7,6 +7,7 @@ import "./ViewMap.scss";
 
 // == Component
 const ViewMap = () => {
+    const [API_KEY] = useState('4qgA42jnxrnWDigecejN');
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [viewState] = useState({
@@ -14,6 +15,15 @@ const ViewMap = () => {
         latitude: 46.8,
         zoom: 5
     });
+
+    const createMap = () => {
+        return new mapLibreGl.Map({
+            container: mapContainer.current,
+            style: `https://api.maptiler.com/maps/streets/style.json?key=${API_KEY}`,
+            center: [viewState.longitude, viewState.latitude],
+            zoom: viewState.zoom
+        }).addControl(new mapLibreGl.NavigationControl(undefined), 'top-right').getContainer();
+    };
 
     useEffect(() => {
 
@@ -25,12 +35,7 @@ const ViewMap = () => {
             return;
         }
 
-        map.current = new mapLibreGl.Map({
-            container: mapContainer.current,
-            style: mapLibreGl.workerUrl,
-            center: [viewState.longitude, viewState.latitude],
-            zoom: viewState.zoom
-        }).addControl(new mapLibreGl.NavigationControl(undefined), 'top-right');
+        map.current = createMap();
     });
 
     return (
