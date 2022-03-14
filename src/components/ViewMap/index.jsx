@@ -1,5 +1,5 @@
 // == Import npm
-import { useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import mapLibreGl from "maplibre-gl";
 
 // == Import style
@@ -14,8 +14,6 @@ const ViewMap = ({ map }) => {
         latitude: 46.8,
         zoom: 5
     });
-
-    mapLibreGl.prewarm();
 
     const alreadyMap = (alreadyMap) => {
         const element = document.getElementById("map-wrap");
