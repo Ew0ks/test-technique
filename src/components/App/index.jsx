@@ -1,5 +1,6 @@
 // == Import npm
-import { Routes as Switch, Route } from 'react-router-dom';
+import { useEffect, useRef } from "react";
+import { Routes as Switch, Route, useLocation } from 'react-router-dom';
 
 // == Import components
 import Navbar from "../Navbar";
@@ -8,6 +9,8 @@ import ViewMap from "../ViewMap";
 
 // == Component
 const App = () => {
+    const location = useLocation();
+    const map = useRef(null);
 
     return (
         <div>
@@ -17,7 +20,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route path="/" element={<Home />} />
-                    <Route path="/map" element={<ViewMap />} />
+                    <Route path="/map" element={<ViewMap map={map} />} />
                 </Switch>
             </main>
         </div>
