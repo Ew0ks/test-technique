@@ -1,6 +1,7 @@
 // == Import npm
 import { useEffect, useRef, useState } from "react";
-import mapLibreGl from "maplibre-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapLibreGl from "!maplibre-gl";
 
 // == Import style
 import "./ViewMap.scss";
