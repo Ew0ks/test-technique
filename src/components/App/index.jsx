@@ -19,7 +19,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route path="/" element={<Home />} />
-                    <Route path="/map" element={<ViewMap map={mapRef} />} />
+                    <Route path="/map" element={<ViewMap mapRef={mapRef} />} />
                 </Switch>
             </main>
         </div>

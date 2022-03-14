@@ -41,7 +41,7 @@ const ViewMap = ({ mapRef }) => {
     });
 
     return (
-        <div className="map-wrap" id="map-wrap">
+        <div id="map-wrap">
             {!mapRef.current && <div ref={mapContainer} className="map" />}
         </div>
     );
